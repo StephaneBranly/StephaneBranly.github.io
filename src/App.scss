@@ -1,23 +1,42 @@
+@import './utils/styleConsts.scss';
+
 .App {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-color: #282c34;
-  color: white;
+  background-color: $app-background-color;
+  color: $secondary-color;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
 }
 
 #content {
-  background-color: rgba(128, 128, 128, 0.407);
   display: flex;
   flex-direction: column;
-  justify-content: start;
+  justify-content: stretch;
   align-items: left;
+  justify-items: center;
+
   width: 90vw;
   margin: 20px;
-  border-radius: 20px;
-  border: 1px solid #ececec;
+  gap: 50px;
+}
+
+.resume_section {
+ 
+}
+
+.resume_section_content {
+  display: flex;
+  flex-direction: column;
+  justify-content: stretch;
+  align-items: left;
+  justify-items: center;
+
+  padding: $section-padding;
+  border-radius: $border-radius;
+  box-shadow: $box-shadow;
+  background-color: $background-color;
 }

@@ -1,0 +1,17 @@
+@import '../../utils/styleConsts.scss';
+
+header {
+    background-color: $header-background-color;
+    padding: $section-padding;
+    border-radius: $border-radius;
+    box-shadow: $box-shadow;
+}
+
+header h1 {
+    color: $base-color;
+    font-size: 2.5rem;
+}
+
+header h2 {
+    color: $secondary-color;
+}

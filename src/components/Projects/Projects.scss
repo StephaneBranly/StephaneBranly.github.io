@@ -1,0 +1,63 @@
+@import '../../utils/styleConsts.scss';
+
+.projects_content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    justify-content: stretch;    
+    row-gap: 1rem;
+    column-gap: 1rem;
+}
+.one_project {
+    background-color: $background-color;
+    text-decoration: none;
+    border-radius: $border-radius;
+    padding: $section-padding/2;
+    color: $secondary-color;
+
+    .project_title {
+        font-size: 1rem;
+    }
+    .project_description {
+        font-size: 1rem;
+        font-weight: 400;
+        margin: 0 0 1rem 0;
+    }
+    .project_labels {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        gap: 0.5rem;
+        .project_label {
+            border: 1px solid $base-color;
+            color: $base-color;
+            padding: 0.2rem;
+            font-size: 0.8rem;
+            font-weight: 400;
+            margin: 0 0 0.5rem 0;
+
+            
+        }
+        .language {
+            color: $flash-color;
+            border-color: $flash-color;
+        }
+    }
+    &:hover {
+        background-color: $base-color;
+        .project_title {
+            color: $background-color;
+        }
+        .project_description {
+            color: $background-color;
+        }
+
+        .project_labels {
+            .project_label {
+                border: 1px solid $background-color;
+                color: $background-color;
+            }
+        }
+    }
+}

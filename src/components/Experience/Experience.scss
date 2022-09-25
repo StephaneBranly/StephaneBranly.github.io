@@ -1,0 +1,45 @@
+@import '../../utils/styleConsts.scss';
+
+.experience_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 20px;
+    .experience_item {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        gap: 10px;
+        background-color: $background-color;
+        text-decoration: none;
+        border-radius: $border-radius;
+        padding: $section-padding/2;
+        color: $secondary-color;
+        .experience_header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            .experience_title {
+                font-size: 1.3rem;
+
+            }
+            .experience_company {
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .experience_date {
+                font-size: 1rem;
+                font-weight: 400;
+                font-style: italic;
+            }
+        }
+        .experience_item_description {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+}

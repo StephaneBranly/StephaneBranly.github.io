@@ -5,8 +5,9 @@ export interface IAandDataScienceSkillsProps {
 }
 
 const IAandDataScienceSkills = (props: IAandDataScienceSkillsProps) => {
-   return <section id='IAandDataScienceSkills'>
+   return <section  className='resume_section' id='IAandDataScienceSkills'>
         <h2>Compétences IA et Science des Données</h2>
+        <section className='IAandDataScienceSkills_content'>
         <ul>
             <li>Systèmes experts</li>
             <li>Programmation logique</li>
@@ -19,6 +20,7 @@ const IAandDataScienceSkills = (props: IAandDataScienceSkillsProps) => {
             <li>MySQL</li>
             <li>PostgreSQL</li>
         </ul>
+        </section>
     </section>
 }
 

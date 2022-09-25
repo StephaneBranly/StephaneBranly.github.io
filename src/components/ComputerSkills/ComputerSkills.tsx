@@ -5,8 +5,9 @@ export interface ComputerSkillsProps {
 }
 
 const ComputerSkills = (props: ComputerSkillsProps) => {
-   return <section id='ComputerSkills'>
+   return <section className='resume_section' id='ComputerSkills'>
         <h2>Compétences informatiques</h2>
+        <section className='ComputerSkills_content'>
         <ul>
             <li>Algorithmique</li>
             <li>Débogage logiciel</li>
@@ -21,6 +22,7 @@ const ComputerSkills = (props: ComputerSkillsProps) => {
             <li>Docker</li>
             <li>Méthode Scrum</li>         
         </ul>
+        </section>
     </section>
 }
 

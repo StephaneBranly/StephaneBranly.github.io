@@ -1,0 +1,26 @@
+@import '../../utils/styleConsts.scss';
+
+
+.IAandDataScienceSkills_content {
+    ul {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-gap: 1rem;
+        list-style: none;
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        li {
+            background-color: $background-color;
+            text-decoration: none;
+            border-radius: $border-radius;
+            padding: $section-padding/2;
+            color: $secondary-color;
+            &:hover {
+                background-color: $base-color;
+                color: $background-color;
+            }
+        }
+        
+    }
+}

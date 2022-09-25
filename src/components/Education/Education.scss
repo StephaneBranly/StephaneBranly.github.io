@@ -1,0 +1,45 @@
+@import '../../utils/styleConsts.scss';
+
+.education_content {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    justify-content: center;
+    gap: 20px;
+    .education_item {
+        display: flex;
+        flex-direction: column;
+        align-items: left;
+        justify-content: center;
+        gap: 10px;
+        background-color: $background-color;
+        text-decoration: none;
+        border-radius: $border-radius;
+        padding: $section-padding/2;
+        color: $secondary-color;
+        .education_header {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+            .education_title {
+                font-size: 1.3rem;
+
+            }
+            .education_company {
+                font-size: 1rem;
+                font-weight: 600;
+            }
+            .education_date {
+                font-size: 1rem;
+                font-weight: 400;
+                font-style: italic;
+            }
+        }
+        .education_item_description {
+            font-size: 1rem;
+            font-weight: 400;
+        }
+    }
+}
