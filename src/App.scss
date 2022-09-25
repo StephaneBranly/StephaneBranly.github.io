@@ -1,18 +1,22 @@
 @import './utils/styleConsts.scss';
 
 .App {
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  background-color: $app-background-color;
-  color: $secondary-color;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  text-align: left;
+  background-image: $app-background-color;
 }
 
 #content {
+  position: absolute;
+  top: 0;
+  height: 100vh;
+  z-index: 1;
   display: flex;
   flex-direction: column;
   justify-content: stretch;
@@ -22,6 +26,7 @@
   width: 90vw;
   margin: 100px 20px;
   gap: 50px;
+  overflow-y: scroll;
 }
 
 .resume_section {
