@@ -6,5 +6,5 @@ import Hobbies from './Hobbies/Hobbies'
 import Education from './Education/Education'
 import Experience from './Experience/Experience'
 import Details from './Details/Details'
-// import Projects from './Projects/Projects'
-export { Details, Header, ComputerSkills, IAandDataScienceSkills, Languages, Hobbies, Education, Experience }
+import Projects from './Projects/Projects'
+export { Details, Projects, Header, ComputerSkills, IAandDataScienceSkills, Languages, Hobbies, Education, Experience }

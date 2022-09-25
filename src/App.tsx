@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.scss';
-import { ComputerSkills, Education, Experience, Header, IAandDataScienceSkills, Languages, Details, Hobbies } from 'components'
+import { ComputerSkills, Education, Experience, Header, IAandDataScienceSkills, Languages, Details, Hobbies, Projects } from 'components'
 
 function App() {
   return (
@@ -13,6 +13,7 @@ function App() {
         <Education />
         <IAandDataScienceSkills />
         <ComputerSkills />
+        <Projects />
         <Languages />
         <Hobbies />
       </section>
