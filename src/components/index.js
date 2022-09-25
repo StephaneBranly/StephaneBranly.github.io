@@ -1,0 +1,10 @@
+import Header from './Header/Header'
+import ComputerSkills from './ComputerSkills/ComputerSkills'
+import IAandDataScienceSkills from './IAandDataScienceSkills/IAandDataScienceSkills'
+import Languages from './Languages/Languages'
+import Hobbies from './Hobbies/Hobbies'
+import Education from './Education/Education'
+import Experience from './Experience/Experience'
+import Details from './Details/Details'
+// import Projects from './Projects/Projects'
+export { Details, Header, ComputerSkills, IAandDataScienceSkills, Languages, Hobbies, Education, Experience }
