@@ -26,10 +26,6 @@
             background-color: $background-color;
             border-radius: $border-radius;
             font-weight: 600;
-            &:hover {
-                background-color: $base-color;
-                color: $background-color;
-            }
         }
     }
 }
