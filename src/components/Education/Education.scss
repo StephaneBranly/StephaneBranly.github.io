@@ -15,20 +15,17 @@
         background-color: $background-color;
         text-decoration: none;
         border-radius: $border-radius;
-        padding: $section-padding/2;
         color: $secondary-color;
+        padding: $section-padding/2;
         .education_header {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
+            color: $base-color;
             .education_title {
-                font-size: 1.3rem;
-
-            }
-            .education_company {
-                font-size: 1rem;
+                font-size: 1.4rem;
                 font-weight: 600;
             }
             .education_date {
@@ -36,6 +33,10 @@
                 font-weight: 400;
                 font-style: italic;
             }
+        }
+        .education_school {
+            font-size: 1rem;
+            font-weight: 600;
         }
         .education_item_description {
             font-size: 1rem;

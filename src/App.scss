@@ -25,7 +25,11 @@
 }
 
 .resume_section {
- 
+  h2 {
+    color: $base-color;
+    font-size: 2rem;
+    font-weight: 600;
+  }
 }
 
 .resume_section_content {
@@ -39,4 +43,6 @@
   border-radius: $border-radius;
   box-shadow: $box-shadow;
   background-color: $background-color;
+
+  
 }

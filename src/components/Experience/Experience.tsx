@@ -11,9 +11,9 @@ const Experience = (props: ExperienceProps) => {
         <section className='experience_item'>
             <div className='experience_header'>
                 <div className='experience_title'>Assistant Ingénieur Informatique</div>
-                <div className='experience_company'>Sysnav</div>
-                <div className='experience_date'>Sep 2021 - Fev 2022</div>
+                <div className='experience_date'>Aou 2021 - Fev 2022</div>
             </div>
+            <div className='experience_company'>Sysnav</div>
             <ul className='experience_description'>
                 <li>Recherche et Développement d’un serveur de tuiles personnalisables</li>
                 <li>Preuve de concept utilisée pour les technologies de géolocalisation des piétons. Géolocalisation faite à partir de la technologie brevetée Sysnav fonctionnant avec une centrale magnéto-inertielle.</li>
@@ -23,9 +23,9 @@ const Experience = (props: ExperienceProps) => {
         <section className='experience_item'>
             <div className='experience_header'>
                 <div className='experience_title'>Ambassadeur</div>
-                <div className='experience_company'>Université de Technologie de Compiègne</div>
                 <div className='experience_date'>2018 - Présent</div>
             </div>
+            <div className='experience_company'>Université de Technologie de Compiègne</div>
             <ul className='experience_description'>
                 <li>Présentation de l'UTC pendant les lives, salons étudiants, portes ouvertes</li>
                 <li>Ambassadeur Parcoursup de l'UTC</li>
@@ -35,9 +35,9 @@ const Experience = (props: ExperienceProps) => {
         <section className='experience_item'>
             <div className='experience_header'>
                 <div className='experience_title'>Développeur</div>
-                <div className='experience_company'>Walacom</div>
                 <div className='experience_date'>Sep 2019 - Oct 2019</div>
             </div>
+            <div className='experience_company'>Walacom</div>
             <ul className='experience_description'>
                 <li>Développement d'un outill de prospection</li>
             </ul>
@@ -46,9 +46,9 @@ const Experience = (props: ExperienceProps) => {
         <section className='experience_item'>
             <div className='experience_header'>
                 <div className='experience_title'>Stage technicien</div>
-                <div className='experience_company'>Nausicáa</div>
                 <div className='experience_date'>Jan 2019 - Fev 2019</div>
             </div>
+            <div className='experience_company'>Nausicáa</div>
             <ul className='experience_description'>
                 <li>Maintenance audiovisuel de la partie Musée de Nausicaà (12V et 220V)</li>
                 <li>Installation de nouvelles expositions</li>

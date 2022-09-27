@@ -21,7 +21,7 @@ const Projects = (props: ProjectsProps) => {
     }
     const renderProject = (project:any) => {
         return ( 
-        <a href={project.html_url} target='_blank' rel='noreferrer' className='one_project'>
+        <a href={project.html_url} target='_blank' rel='noreferrer' className='project_item'>
         <section>
             <h3 className='project_title'>{project.name}</h3>
             <div className='project_description'>{project.description}</div>

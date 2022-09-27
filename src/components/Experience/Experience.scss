@@ -15,20 +15,19 @@
         background-color: $background-color;
         text-decoration: none;
         border-radius: $border-radius;
-        padding: $section-padding/2;
         color: $secondary-color;
+        overflow: hidden;
+        padding: $section-padding/2;
+
         .experience_header {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
             gap: 10px;
+            color: $base-color;
             .experience_title {
-                font-size: 1.3rem;
-
-            }
-            .experience_company {
-                font-size: 1rem;
+                font-size: 1.4rem;
                 font-weight: 600;
             }
             .experience_date {
@@ -36,6 +35,10 @@
                 font-weight: 400;
                 font-style: italic;
             }
+        }
+        .experience_company {
+            font-size: 1rem;
+            font-weight: 600;
         }
         .experience_item_description {
             font-size: 1rem;
