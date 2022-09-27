@@ -1,5 +1,5 @@
 import './Details.scss'
-import { AiOutlineMail, AiOutlineCalendar, AiOutlineLinkedin, AiOutlineGithub } from "react-icons/ai"
+import { AiOutlineMail, AiOutlineCalendar, AiOutlineLinkedin, AiOutlineGithub, AiOutlineFileText } from "react-icons/ai"
 export interface DetailsProps {
    
 }
@@ -10,7 +10,7 @@ const Details = (props: DetailsProps) => {
         <section className='details_content'>
         <ul>
             <li>
-                <a href='mailto:stephanebranly+webresume@gmail.com' type='mailto'>
+                <a href='mailto:stephanebranly+webresume@gmail.com' target={'_blank'} rel={'noreferrer'} >
                     <div className='detail_content'>
                         <AiOutlineMail className='detail_icon'/><span className='detail_text'>stephanebranly@gmail.com</span>
                     </div>
@@ -22,16 +22,23 @@ const Details = (props: DetailsProps) => {
                 </div>
             </li>
             <li>
-                <a href='https://www.linkedin.com/in/stephanebranly/'>
+                <a href='https://www.linkedin.com/in/stephanebranly/' target={'_blank'} rel={'noreferrer'} >
                     <div className='detail_content'>
                         <AiOutlineLinkedin className='detail_icon'/><span className='detail_text'>/stephanebranly</span>
                     </div>
                 </a>
             </li>
             <li>
-                <a href='https://github.com/StephaneBranly'>
+                <a href='https://github.com/StephaneBranly' target={'_blank'} rel={'noreferrer'} >
                     <div className='detail_content'>
                         <AiOutlineGithub className='detail_icon'/><span className='detail_text'>/stephanebranly</span>
+                    </div>
+                </a>
+            </li>
+            <li>
+                <a href='./BRANLY-paper-resume.pdf' target={'_blank'} rel={'noreferrer'} >
+                    <div className='detail_content'>
+                        <AiOutlineFileText className='detail_icon'/><span className='detail_text'>CV papier</span>
                     </div>
                 </a>
             </li>
