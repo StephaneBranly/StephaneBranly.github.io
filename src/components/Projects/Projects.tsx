@@ -12,7 +12,7 @@ const Projects = (props: ProjectsProps) => {
     useEffect(() => {
         fetchGithubRepositories('StephaneBranly').then(
             (projects) => {
-                setAllProjects(projects)
+                setAllProjects(projects.filter((project: any) => project.archived === false))
             })
     }, [])
 
