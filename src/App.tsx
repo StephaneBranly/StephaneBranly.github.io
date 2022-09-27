@@ -6,16 +6,18 @@ function App() {
   return (
     <div className="App">
       <Scene />
-      <section id='content'>
-        <Header />
-        <Details />
-        <Experience />
-        <Education />
-        <IAandDataScienceSkills />
-        <ComputerSkills />
-        <Projects />
-        <Languages />
-        <Hobbies />
+      <section id='overlay'>
+        <section id='content'>
+          <Header />
+          <Details />
+          <Experience />
+          <Education />
+          <IAandDataScienceSkills />
+          <ComputerSkills />
+          <Projects />
+          <Languages />
+          <Hobbies />
+        </section>
       </section>
     </div>
   );
