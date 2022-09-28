@@ -44,7 +44,7 @@
             font-weight: 400;
             margin: 0 0 0.5rem 0;
             border-radius: 2em;
-            
+            text-align: center;
         }
         .language {
             color: $flash-color;
@@ -66,5 +66,50 @@
                 color: $background-color;
             }
         }
+    }
+}
+.projects_pagination {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin: 1rem 0;
+    .pagination_button {
+        background-color: $background-color;
+        border: none;
+        color: $base-color;
+        border-radius: $border-radius;
+        padding: 0.5rem 1rem;
+        font-size: 1rem;
+        font-weight: 400;
+        cursor: pointer;
+        transition: all 0.1s ease-in-out;
+        &:hover, &.active {
+            background-color: $base-color;
+            color: $background-color;
+        } 
+        &:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+    }
+}
+.loading_icon {
+    animation: spin 1s linear infinite;
+    font-size: 2rem;
+    width: 100%;
+    color: $base-color;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg) scale(1);
+    }
+    50% {
+        transform: rotate(180deg) scale(1.2);
+    }
+    100% {
+        transform: rotate(360deg) scale(1);
     }
 }
