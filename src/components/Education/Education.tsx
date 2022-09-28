@@ -11,7 +11,7 @@ const Education = (props: EducationProps) => {
         <section className='education_item'>
             <div className='education_header'>
                 <div className='education_title'>Échange Ingénieur Informatique</div>
-                <div className='education_date'>Aou 2022 - Dec 2023</div>
+                <div className='education_date'>Aou 2022 - Dec 2022</div>
             </div>
             <div className='education_school'>Polytechnique Montréal</div>
         </section>

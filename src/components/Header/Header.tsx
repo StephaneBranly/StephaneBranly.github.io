@@ -10,7 +10,7 @@ const Header = (props: HeaderProps) => {
         <h2>Étudiant à l'Université de Technologie de Compiègne, spécialisé en Intelligence Artificielle et Science des Données</h2>
 
         <div>
-            Recherche un projet de fin d'études.
+            Recherche un Projet de Fin d'Étude.
         </div>
         <div>
             En Intelligence Artificielle et Science des Données, de février à juillet 2023
