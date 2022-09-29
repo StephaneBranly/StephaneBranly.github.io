@@ -1,4 +1,4 @@
-import { Suspense, useRef } from "react";
+import { Suspense, useMemo, useRef } from "react";
 import { Canvas, useFrame, useLoader } from "react-three-fiber";
 import { Html, useProgress } from '@react-three/drei'
 import * as THREE from 'three'
@@ -25,14 +25,24 @@ const Cube = () => {
 }
 
 const Compiegne = () => {
-    const gltf = useLoader(GLTFLoader, './compi.gltf')
+    const gltf = useLoader(GLTFLoader, './Compiegne.glb')
     const ref = useRef<THREE.Group>(null)
 
-    // useFrame(() => {
-    //     if (ref.current) {
-    //         ref.current.rotation.y += 0.001
-    //     }
-    // })
+    useFrame(() => {
+        if (ref.current) {
+            ref.current.rotation.y += 0.001
+        }
+    })
+
+    useMemo(() => {
+        gltf.scene.traverse((child) => {
+            if(child instanceof THREE.Mesh && child.name === 'Areasbuilding') {
+                child.material = new THREE.MeshStandardMaterial({ color: '#1110f6' })
+            } else {
+                (child as THREE.Line).material = new THREE.LineBasicMaterial( { color: 0x0000ff, linewidth: 30 } );
+            }
+        })
+    }, [gltf])
     return (
         <Suspense fallback={null}>
             <group ref={ref}>
@@ -42,8 +52,8 @@ const Compiegne = () => {
       )
 }
 const Scene = () => {
-    return (<Canvas camera={{ position: [200, 250, 200] }}>
-        {/* <fog attach="fog" args={['#202030', 10, 25]} /> */}
+    return (<Canvas camera={{ position: [200, 150, 400] }}>
+        <fog attach="fog" args={['#000', 600, 790]} />
         <Suspense fallback={<Loader />}>
             <gridHelper />
             <axesHelper />
