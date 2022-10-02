@@ -10,9 +10,9 @@ const Details = (props: DetailsProps) => {
         <section className='details_content'>
         <ul>
             <li>
-                <a href='mailto:stephanebranly+webresume@gmail.com' target={'_blank'} rel={'noreferrer'} >
+                <a href='mailto:stephanebranly.pro+webresume@gmail.com' target={'_blank'} rel={'noreferrer'} >
                     <div className='detail_content'>
-                        <AiOutlineMail className='detail_icon'/><span className='detail_text'>stephanebranly@gmail.com</span>
+                        <AiOutlineMail className='detail_icon'/><span className='detail_text'>stephanebranly.pro@gmail.com</span>
                     </div>
                 </a>
             </li>
