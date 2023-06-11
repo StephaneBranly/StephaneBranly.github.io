@@ -5,7 +5,11 @@ export interface DetailsProps {
 }
 
 const Details = (props: DetailsProps) => {
-   return <section  className='resume_section' id='details'>
+    const birthday = new Date('2000-01-27')
+    const today = new Date()
+    const age = today.getFullYear() - birthday.getFullYear()    
+
+    return <section  className='resume_section' id='details'>
         <h2>Détails</h2>
         <section className='details_content'>
         <ul>
@@ -18,7 +22,7 @@ const Details = (props: DetailsProps) => {
             </li>
             <li>
                 <div className='detail_content'>
-                    <AiOutlineCalendar className='detail_icon' /><span className='detail_text'>22 ans</span>
+                    <AiOutlineCalendar className='detail_icon' /><span className='detail_text'>{age} ans</span>
                 </div>
             </li>
             <li>
