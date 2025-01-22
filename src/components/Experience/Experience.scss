@@ -1,58 +1,58 @@
-@import '../../utils/styleConsts.scss';
+@import "../../utils/styleConsts.scss";
 
 .experience_content {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: center;
+  gap: 20px;
+  .experience_item {
     display: flex;
     flex-direction: column;
-    align-items: stretch;
+    align-items: left;
     justify-content: center;
-    gap: 20px;
-    .experience_item {
-        display: flex;
-        flex-direction: column;
-        align-items: left;
-        justify-content: center;
-        gap: 10px;
-        background-color: $background-color;
-        text-decoration: none;
-        border-radius: $border-radius;
-        color: $secondary-color;
-        overflow: hidden;
-        padding: $section-padding/2;
+    gap: 10px;
+    background-color: $background-color;
+    text-decoration: none;
+    border-radius: $border-radius;
+    color: $secondary-color;
+    overflow: hidden;
+    padding: $section-padding/2;
 
-        .experience_header {
-            display: flex;
-            flex-direction: row;
-            align-items: center;
-            justify-content: space-between;
-            gap: 10px;
-            color: $base-color;
-            .experience_title {
-                font-size: 1.4rem;
-                font-weight: 600;
-            }
-            .experience_date {
-                font-size: 1rem;
-                font-weight: 400;
-                font-style: italic;
-            }
-        }
-        a {
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1rem;
-        }
-        .experience_company {
-            font-size: 1rem;
-            font-weight: 600;
-            color: $secondary-color;
-            text-decoration: none;
-            &:hover {
-                color: $base-color;
-            }
-        }
-        .experience_item_description {
-            font-size: 1rem;
-            font-weight: 400;
-        }
+    .experience_header {
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      color: $base-color;
+      .experience_title {
+        font-size: 1.4rem;
+        font-weight: 600;
+      }
+      .experience_date {
+        font-size: 1rem;
+        font-weight: 400;
+        font-style: italic;
+      }
     }
+    a {
+      text-decoration: color(from $secondary-color);
+      font-weight: 600;
+      font-size: 1rem;
+    }
+    .experience_company {
+      font-size: 1rem;
+      font-weight: 600;
+      color: $secondary-color;
+      text-decoration: none;
+      &:hover {
+        color: $base-color;
+      }
+    }
+    .experience_item_description {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+  }
 }
