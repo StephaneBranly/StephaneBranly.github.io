@@ -1,0 +1,36 @@
+@prefix ex: <http://example.org/experience#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://github.com/StephaneBranly/StephaneBranly.github.io#> .
+
+<:StephaneBranly>
+    :experience <:EPSFExperience> ;
+    :experience <:SysnavExperience> ;
+    :experience <:UTCExperience> .
+    :experience <:WalacomExperience> .
+    :experience <:NausicaaExperience> .
+
+<:EPSFExperience>
+    :jobTitle "Data Scientist" ;
+    :startDate "2023-02-13"^^xsd:date .
+
+<:SysnavExperience>
+    :jobTitle "Assistant Ingénieur Informatique"@fr ;
+    :startDate "2021-08-01"^^xsd:date ;
+    :endDate "2022-02-01"^^xsd:date .
+
+<:UTCExperience>
+    :jobTitle "Ambassadeur"@fr ;
+    :startDate "2020-09-01"^^xsd:date ;
+    :endDate "2021-08-01"^^xsd:date .
+
+<:WalacomExperience>
+    :jobTitle "Développeur"@fr ;
+    :startDate "2020-06-01"^^xsd:date ;
+    :endDate "2020-08-01"^^xsd:date .
+
+<:NausicaaExperience>
+    :jobTitle "Stage technicien"@fr ;
+    :startDate "2019-07-01"^^xsd:date ;
+    :endDate "2019-08-01"^^xsd:date .
