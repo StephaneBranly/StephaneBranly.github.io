@@ -1,0 +1,21 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://stephanebranly.github.io#> .
+
+:EPSF
+    :name "Établissement Public de Sécurité Ferroviaire" ;
+    :website "https://securite-ferroviaire.fr/" .
+
+:Sysnav
+    :name "Sysnav" ;
+    :website "https://www.sysnav.fr/" .
+
+:UTC
+    :name "Université de Technologie de Compiègne" ;
+    :website "https://www.utc.fr/" .
+
+:Walacom
+    :name "Walacom" .
+
+:Nausicaa
+    :name "Nausicáa" ;
+    :website "https://www.nausicaa.fr" .

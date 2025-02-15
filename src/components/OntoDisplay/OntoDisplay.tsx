@@ -38,9 +38,24 @@ const OntoDisplay = (props: OntoDisplayProps) => {
     });
   }, [fileContent]);
 
+  const serializeStore = () => {
+    if (!ontoStore) return;
+    const writer = new N3.Writer();
+    ontoStore.getQuads(null, null, null, null).forEach((quad) => {
+      writer.addQuad(quad);
+    });
+    return writer.end((error, result) => console.log(result));
+  };
+
   return useMemo(() => {
     if (!ontoStore) return null;
-    if (render) return render(ontoStore);
+    if (render)
+      return (
+        <section>
+          <button onClick={() => serializeStore()}>Log store</button>
+          {render(ontoStore)}
+        </section>
+      );
     return null;
   }, [ontoStore, render]);
 };

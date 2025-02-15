@@ -1,8 +1,8 @@
 import * as N3 from "n3";
-import baseURI from "./baseURI";
+import prefixes from "./prefixes";
 
-const getNamedNode = (uri: string) => {
-  return new N3.NamedNode(baseURI + uri);
+const getNamedNode = (uri: string, prefix: keyof typeof prefixes = "") => {
+  return new N3.NamedNode(prefixes[prefix] + uri);
 };
 
 export default getNamedNode;

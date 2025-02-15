@@ -13,6 +13,7 @@ import {
 } from "components";
 
 import { Canvas, useFrame } from "@react-three/fiber";
+import OntoProvider from "ontology/OntoProvider";
 function Box(props: any) {
   // This reference will give us direct access to the mesh
   const meshRef = useRef();
@@ -43,7 +44,8 @@ function App() {
   const pos2 = [2, 0, 0];
   return (
     <div className="App">
-      {/* <Canvas>
+      <OntoProvider>
+        {/* <Canvas>
         <ambientLight intensity={Math.PI / 2} />
         <spotLight
           position={[10, 10, 10]}
@@ -67,17 +69,18 @@ function App() {
         <Box position={pos1} />
         <Box position={pos2} />
       </Canvas> */}
-      <section id="content">
-        <Header />
-        <Details />
-        <Experience />
-        <Education />
-        <IAandDataScienceSkills />
-        <ComputerSkills />
-        <Projects />
-        <Languages />
-        <Hobbies />
-      </section>
+        <section id="content">
+          <Header />
+          <Details />
+          <Experience />
+          <Education />
+          <IAandDataScienceSkills />
+          <ComputerSkills />
+          <Projects />
+          <Languages />
+          <Hobbies />
+        </section>
+      </OntoProvider>
     </div>
   );
 }

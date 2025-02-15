@@ -2,9 +2,21 @@
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix : <https://github.com/StephaneBranly/StephaneBranly.github.io#> .
+@prefix : <https://stephanebranly.github.io#> .
 
-<:StephaneBranly> 
-    :hobby <:Bike> ;
-    :hobby <:Programming> ;
-    :hobby <:Music> .
+:StephaneBranly 
+    :hobby :Bike ;
+    :hobby :Programming ;
+    :hobby :Music .
+
+:Bike a :Hobby ;
+    rdfs:label "Bike"@en ;
+    rdfs:label "Vélo"@fr .
+
+:Programming a :Hobby ;
+    rdfs:label "Programming"@en ;
+    rdfs:label "Programmation"@fr .
+
+:Music a :Hobby ;
+    rdfs:label "Music"@en ;
+    rdfs:label "Musique"@fr .

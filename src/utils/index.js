@@ -1,7 +1,7 @@
 import fetchGithubRepositories from "./fetchGithubRepositories";
 import readFile from "./readFile";
 import getTriple from "./getTriple";
-import baseURI from "./baseURI";
+import baseURI from "./prefixes";
 import getNamedNode from "./getNamedNode";
 
 export default {
