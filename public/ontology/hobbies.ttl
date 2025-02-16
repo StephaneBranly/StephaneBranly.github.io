@@ -1,4 +1,3 @@
-@prefix ex: <http://example.org/experience#> .
 @prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
@@ -11,12 +10,12 @@
 
 :Bike a :Hobby ;
     rdfs:label "Bike"@en ;
-    rdfs:label "Vélo"@fr .
+    rdfs:label "🚴 Vélo de route, bikepacking, trekking"@fr .
 
 :Programming a :Hobby ;
     rdfs:label "Programming"@en ;
-    rdfs:label "Programmation"@fr .
+    rdfs:label "👨🏻‍💻 Programmation, Open Source"@fr .
 
 :Music a :Hobby ;
     rdfs:label "Music"@en ;
-    rdfs:label "Musique"@fr .
+    rdfs:label "🎹 Piano, synthétiseur, musique"@fr .

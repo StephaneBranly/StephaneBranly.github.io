@@ -1,0 +1,37 @@
+@import "../../utils/styleConsts.scss";
+
+header {
+  width: 100%;
+  padding: 0;
+  background-color: $header-background-color;
+  box-shadow: $box-shadow;
+}
+
+nav {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+nav ul {
+  display: flex;
+  padding: $section-padding;
+  gap: 1rem;
+}
+
+nav ul li {
+  list-style: none;
+}
+
+nav ul li a {
+  color: $base-color;
+  text-decoration: none;
+  padding: 5px;
+  border-radius: $border-radius;
+}
+
+nav ul li:hover,
+nav ul li a:hover {
+  color: $secondary-color;
+  background-color: white;
+}

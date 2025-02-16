@@ -1,0 +1,16 @@
+@import "../../utils/styleConsts.scss";
+
+.organisation_title a {
+  text-decoration: color(from $secondary-color);
+  font-weight: 600;
+  font-size: 1rem;
+}
+.organisation_title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $secondary-color;
+  text-decoration: none;
+  &:hover {
+    color: $base-color;
+  }
+}

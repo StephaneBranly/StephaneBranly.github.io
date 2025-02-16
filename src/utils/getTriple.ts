@@ -7,6 +7,7 @@ const getTriple = (
   language?: string
 ) => {
   const triples = store.match(subject || null, predicate || null, null);
+  let lastTriple;
   while (triples.size !== 0) {
     const triple = triples.read();
     if (!triple) {
@@ -20,8 +21,11 @@ const getTriple = (
       triple.object.language === language
     ) {
       return triple.object;
+    } else {
+      lastTriple = triple;
     }
   }
+  return lastTriple?.object;
 };
 
 export default getTriple;

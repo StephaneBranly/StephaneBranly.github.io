@@ -5,6 +5,7 @@ export interface OntoContextType {
   store: Store;
   addOntologyFile: (filename: string) => Promise<void>;
   serializeStore: () => Promise<string>;
+  loadDefaultOntologies: () => Promise<void>;
 }
 
 const OntoContext = createContext<OntoContextType>({} as OntoContextType);

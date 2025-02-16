@@ -1,4 +1,3 @@
-import OntoDisplay from "components/OntoDisplay/OntoDisplay";
 import "./Education.scss";
 import { Store, Term } from "n3";
 import getNamedNode from "utils/getNamedNode";
@@ -6,6 +5,7 @@ import getTriple from "utils/getTriple";
 import moment from "moment";
 import { useContext, useEffect } from "react";
 import { useOntoContext } from "ontology/OntoContext";
+import OrganisationTitle from "components/OrganisationTitle/OrganisationTitle";
 
 export interface EducationProps {}
 
@@ -32,7 +32,9 @@ const Education = (props: EducationProps) => {
           </div>
           <div className="education_date">{`${startDateStr} - ${endDateStr}`}</div>
         </div>
-        <div className="education_school">{school?.value}</div>
+        <div className="education_school">
+          <OrganisationTitle organisation={school as Term} />
+        </div>
       </section>
     );
   };

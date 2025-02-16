@@ -1,6 +1,4 @@
-import OntoDisplay from "components/OntoDisplay/OntoDisplay";
 import "./Hobbies.scss";
-import { Store } from "n3";
 import getNamedNode from "utils/getNamedNode";
 import getTriple from "utils/getTriple";
 import { useOntoContext } from "ontology/OntoContext";

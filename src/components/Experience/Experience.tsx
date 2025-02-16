@@ -5,6 +5,7 @@ import getTriple from "utils/getTriple";
 import moment from "moment";
 import { useOntoContext } from "ontology/OntoContext";
 import { useEffect } from "react";
+import OrganisationTitle from "components/OrganisationTitle/OrganisationTitle";
 
 export interface ExperienceProps {}
 
@@ -18,11 +19,6 @@ const Experience = (props: ExperienceProps) => {
 
   const render_experience = (store: Store, experience: Term) => {
     const company = getTriple(store, experience, getNamedNode("company"));
-    const compagnyWebsite = getTriple(
-      store,
-      company as Term,
-      getNamedNode("website")
-    );
 
     const tasks = store.getQuads(experience, getNamedNode("task"), null, null);
 
@@ -41,11 +37,7 @@ const Experience = (props: ExperienceProps) => {
           </div>
           <div className="experience_date">{`${startDateStr} - ${endDateStr}`}</div>
         </div>
-        <a href={compagnyWebsite?.value} target={"_blank"} rel={"noreferrer"}>
-          <div className="experience_company">
-            {getTriple(store, company as Term, getNamedNode("name"))?.value}
-          </div>
-        </a>
+        <OrganisationTitle organisation={company as Term} />
         <ul className="experience_description">
           {tasks.map((task, index) => (
             <li key={index}>{task.object.value}</li>

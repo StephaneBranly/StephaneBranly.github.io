@@ -8,5 +8,5 @@
     :surname "Branly" ;
     :givenName "Stéphane" ;
     :title "Ingénieur informatique de l'Université de Technologie de Compiègne, spécialisé en Intelligence Artificielle et Science des Données" ;
-    :situation "Data Scientist chez l'EPSF (Établissement Public de Sécurité Ferroviaire)"@fr ;
+    :situation "Actuellement Data Scientist chez l'EPSF (Établissement Public de Sécurité Ferroviaire)"@fr ;
     :situation "Data Scientist at the EPSF (Établissement Public de Sécurité Ferroviaire)"@en .

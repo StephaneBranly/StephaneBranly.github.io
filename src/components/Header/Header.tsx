@@ -1,6 +1,3 @@
-import OntoDisplay from "components/OntoDisplay/OntoDisplay";
-import * as N3 from "n3";
-
 import "./Header.scss";
 import getTriple from "utils/getTriple";
 import getNamedNode from "utils/getNamedNode";
@@ -22,8 +19,7 @@ const Header = (props: HeaderProps) => {
   };
 
   return (
-    <header>
-      <button onClick={log}>Log store</button>
+    <header className="classic-header">
       <h1>
         {getTriple(onto.store, null, getNamedNode("givenName"))?.value}{" "}
         {getTriple(
