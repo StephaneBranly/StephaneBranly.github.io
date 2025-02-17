@@ -1,6 +1,10 @@
 import { Canvas } from "@react-three/fiber";
-import { useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { Html, OrbitControls } from "@react-three/drei";
+import { useOntoContext } from "ontology/OntoContext";
+import { Term } from "n3";
+import prefixes, { replacePrefixes } from "utils/prefixes";
+import { Vector3 } from "three";
 
 function Sphere(props: any) {
   // This reference will give us direct access to the mesh
@@ -27,7 +31,88 @@ function Sphere(props: any) {
   );
 }
 
+const renderNode = (term: Term, position: Vector3) => {
+  if (term.termType === "NamedNode") {
+    const link = term.value.replace(prefixes[""], "#");
+    return (
+      <group position={position}>
+        <Sphere />
+
+        <Html>
+          <div
+            style={{
+              transform: "translate(-50%, -50%)",
+              width: "max-content",
+              backgroundColor: "white",
+              border: "1px solid #dedede",
+              padding: "0.1em",
+              borderRadius: "0.2em",
+              position: "absolute",
+            }}
+          >
+            <a href={link} className="namednode">
+              {replacePrefixes(term.value)}
+            </a>
+          </div>
+        </Html>
+      </group>
+    );
+  } else if (term.termType === "Literal") {
+    const language = term.language ? `@${term.language}` : undefined;
+    const datatype = term.datatypeString
+      ? replacePrefixes(term.datatypeString)
+      : undefined;
+    return (
+      <Html>
+        <div
+          style={{
+            transform: "translate(-50%, -50%)",
+            width: "max-content",
+            backgroundColor: "white",
+            border: "1px solid #dedede",
+            padding: "0.1em",
+            borderRadius: "0.2em",
+            position: "absolute",
+            top: "-20px",
+          }}
+        >
+          <span className="literal">
+            "{term.value}"
+            {datatype &&
+              !["xsd:string", "rdf:langString"].includes(datatype) && (
+                <span className="type">^^{datatype}</span>
+              )}
+            <span className="language">{language}</span>
+          </span>
+        </div>
+      </Html>
+    );
+  }
+};
+
 const OntologyExplorerView = () => {
+  const onto = useOntoContext();
+
+  const [nodes, setNodes] = useState<
+    Record<string, { subject: Term; position: Vector3 }>
+  >({});
+  useEffect(() => {
+    const subjects = onto.store.getSubjects(null, null, null);
+    const newNodes: Record<string, { subject: Term; position: Vector3 }> = {};
+    subjects.forEach((subject, index) => {
+      newNodes[subject.value] = {
+        subject: subject,
+        position: [
+          (Math.random() - 0.5) * 30,
+          (Math.random() - 0.5) * 30,
+          (Math.random() - 0.5) * 30,
+        ] as unknown as Vector3,
+      };
+    });
+
+    setNodes(newNodes);
+  }, [onto.store]);
+
   const positions = useMemo(() => {
     return Array.apply(null, Array(20)).map(() => {
       return [
@@ -70,10 +155,15 @@ const OntologyExplorerView = () => {
           </div>
         </Html>
         <pointLight position={[-10, -10, -10]} decay={0} intensity={Math.PI} />
-        <group>
+        {/* <group>
           {positions.map((pos, index) => (
             <Sphere position={pos} key={index} />
           ))}
+        </group> */}
+        <group>
+          {Object.entries(nodes).map(([key, node], index) =>
+            renderNode(node.subject, node.position)
+          )}
         </group>
       </Canvas>
     </div>
