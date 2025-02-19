@@ -1,8 +1,8 @@
 import { Canvas } from "@react-three/fiber";
 import { useEffect, useMemo, useRef, useState } from "react";
-import { Html, OrbitControls } from "@react-three/drei";
+import { Html, Line, OrbitControls } from "@react-three/drei";
 import { useOntoContext } from "ontology/OntoContext";
-import { Term } from "n3";
+import { Quad, Term } from "n3";
 import prefixes, { replacePrefixes } from "utils/prefixes";
 import { Vector3 } from "three";
 
@@ -31,6 +31,15 @@ function Sphere(props: any) {
   );
 }
 
+const renderLink = (
+  link: Quad,
+  nodes: Record<string, { term: Term; position: Vector3 }>
+) => {
+  const lineStart = nodes[link.subject.value].position;
+  const lineEnd = nodes[link.object.value].position;
+  return <Line points={[lineStart, lineEnd]} />;
+};
+
 const renderNode = (term: Term, position: Vector3) => {
   if (term.termType === "NamedNode") {
     const link = term.value.replace(prefixes[""], "#");
@@ -49,6 +58,7 @@ const renderNode = (term: Term, position: Vector3) => {
               borderRadius: "0.2em",
               position: "absolute",
             }}
+            id={link}
           >
             <a href={link} className="namednode">
               {replacePrefixes(term.value)}
@@ -63,12 +73,12 @@ const renderNode = (term: Term, position: Vector3) => {
       ? replacePrefixes(term.datatypeString)
       : undefined;
     return (
-      <Html>
+      <Html position={position}>
         <div
           style={{
             transform: "translate(-50%, -50%)",
             width: "max-content",
-            backgroundColor: "white",
+            backgroundColor: "#deae33",
             border: "1px solid #dedede",
             padding: "0.1em",
             borderRadius: "0.2em",
@@ -94,14 +104,29 @@ const OntologyExplorerView = () => {
   const onto = useOntoContext();
 
   const [nodes, setNodes] = useState<
-    Record<string, { subject: Term; position: Vector3 }>
+    Record<string, { term: Term; position: Vector3 }>
   >({});
+  const [links, setLinks] = useState<Quad[]>([]);
+
   useEffect(() => {
     const subjects = onto.store.getSubjects(null, null, null);
-    const newNodes: Record<string, { subject: Term; position: Vector3 }> = {};
+    const objects = onto.store.getObjects(null, null, null);
+    const triples = onto.store.getQuads(null, null, null, null);
+
+    const newNodes: Record<string, { term: Term; position: Vector3 }> = {};
     subjects.forEach((subject, index) => {
       newNodes[subject.value] = {
-        subject: subject,
+        term: subject,
+        position: [
+          (Math.random() - 0.5) * 30,
+          (Math.random() - 0.5) * 30,
+          (Math.random() - 0.5) * 30,
+        ] as unknown as Vector3,
+      };
+    });
+    objects.forEach((object, index) => {
+      newNodes[object.value] = {
+        term: object,
         position: [
           (Math.random() - 0.5) * 30,
           (Math.random() - 0.5) * 30,
@@ -111,17 +136,18 @@ const OntologyExplorerView = () => {
     });
 
     setNodes(newNodes);
+    setLinks(triples);
   }, [onto.store]);
 
-  const positions = useMemo(() => {
-    return Array.apply(null, Array(20)).map(() => {
-      return [
-        (Math.random() - 0.5) * 30,
-        (Math.random() - 0.5) * 30,
-        (Math.random() - 0.5) * 30,
-      ];
-    });
-  }, []);
+  useEffect(() => {
+    console.group("Nodes");
+    {
+      Object.entries(nodes).map(([key, node], index) =>
+        console.log(key, node.position)
+      );
+    }
+    console.groupEnd();
+  }, [nodes]);
 
   return (
     <div
@@ -162,7 +188,10 @@ const OntologyExplorerView = () => {
         </group> */}
         <group>
           {Object.entries(nodes).map(([key, node], index) =>
-            renderNode(node.subject, node.position)
+            renderNode(node.term, node.position)
+          )}
+          {Object.entries(links).map(([key, quad], index) =>
+            renderLink(quad, nodes)
           )}
         </group>
       </Canvas>
