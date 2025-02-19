@@ -1,0 +1,35 @@
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://stephanebranly.github.io#> .
+
+:StephaneBranly
+    :education :PolytechniqueMontrealEducation ;
+    :education :UTCGIEducation ;
+    :education :UTCTCEducation ;
+    :education :LyceeBranlyEducation .
+
+:PolytechniqueMontrealEducation
+    :school :PolytechniqueMontreal ;
+    :title "Échange Ingénieur Informatique" ;
+    :startDate "2022-08-01"^^xsd:date ;
+    :endDate "2022-12-01"^^xsd:date .
+
+:UTCGIEducation
+    :school :UTC ;
+    :title "Ingénieur Informatique, IA et Science des données" ;
+    :startDate "2020-09-01"^^xsd:date ;
+    :endDate "2023-07-01"^^xsd:date .
+
+:UTCTCEducation
+    :school :UTC ;
+    :title "Tronc Commun" ;
+    :startDate "2018-09-01"^^xsd:date ;
+    :endDate "2020-08-01"^^xsd:date .
+
+
+:LyceeBranlyEducation
+    :school :LyceeBranly ;
+    :title "Terminale Scientifique" ;
+    :startDate "2015-09-01"^^xsd:date ;
+    :endDate "2018-07-01"^^xsd:date .

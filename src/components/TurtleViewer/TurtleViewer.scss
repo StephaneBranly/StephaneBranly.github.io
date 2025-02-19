@@ -1,0 +1,80 @@
+@import "../../utils/styleConsts.scss";
+
+.turtle-viewer {
+  background-color: $background-color;
+  border-radius: $border-radius;
+  padding: 5px;
+}
+.turtle-file {
+  display: flex;
+  flex-direction: column;
+  overflow: auto;
+  border-radius: $border-radius;
+  // border: 1px solid #888;
+  counter-reset: line;
+  margin: 0;
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.turtle-file .subject {
+  background-color: $base-color;
+  color: white;
+  position: relative;
+
+  padding-right: 1rem;
+}
+
+.turtle-file .literal {
+  color: $secondary-color;
+  border-radius: $border-radius;
+  padding: 0 2px;
+}
+
+.turtle-file .literal .type {
+  color: $base-color;
+  font-size: 0.8rem;
+}
+
+.turtle-file .literal .language {
+  color: $base-color;
+  font-size: 0.8rem;
+}
+
+.turtle-file .namednode {
+  color: $base-color;
+}
+
+.turtle-file .row {
+  padding: 0;
+  margin: 0;
+  &:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  &:hover::before {
+    color: $base-color;
+  }
+  &:target {
+    &::before {
+      color: $flash-color;
+    }
+    & .subject {
+      border-left: 2px solid $flash-color;
+      background-color: $flash-color;
+    }
+  }
+}
+
+.turtle-file .row .tab {
+  width: 30px;
+  display: inline-block;
+}
+
+.turtle-file .row:before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  border-right: 1px solid #ddd;
+  padding: 0 2em 0 0.5em;
+  color: #888;
+  width: 5px;
+}

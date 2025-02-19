@@ -1,20 +1,36 @@
 import "./Header.scss";
+import getTriple from "utils/getTriple";
+import getNamedNode from "utils/getNamedNode";
+import { useOntoContext } from "ontology/OntoContext";
+import { useEffect } from "react";
 
 export interface HeaderProps {}
 
 const Header = (props: HeaderProps) => {
-  return (
-    <header>
-      <h1>Stéphane BRANLY</h1>
-      <h2>
-        Ingénieur informatique de l'Université de Technologie de Compiègne,
-        spécialisé en Intelligence Artificielle et Science des Données
-      </h2>
+  const onto = useOntoContext();
 
-      <div>
-        Data Scientist chez l'EPSF (Établissement Public de Sécurité
-        Ferroviaire)
-      </div>
+  useEffect(() => {
+    onto.addOntologyFile("./ontology/header.ttl");
+  }, []);
+
+  const log = async () => {
+    const str = await onto.serializeStore();
+    console.log(str);
+  };
+
+  return (
+    <header className="classic-header">
+      <h1>
+        {getTriple(onto.store, null, getNamedNode("givenName"))?.value}{" "}
+        {getTriple(
+          onto.store,
+          null,
+          getNamedNode("surname")
+        )?.value.toUpperCase()}
+      </h1>
+      <h2>{getTriple(onto.store, null, getNamedNode("title"))?.value}</h2>
+
+      <div>{getTriple(onto.store, null, getNamedNode("situation"))?.value}</div>
     </header>
   );
 };

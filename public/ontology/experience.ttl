@@ -1,0 +1,50 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix : <https://stephanebranly.github.io#> .
+
+:StephaneBranly
+    :experience :EPSFExperience ;
+    :experience :SysnavExperience ;
+    :experience :UTCExperience ;
+    :experience :WalacomExperience ;
+    :experience :NausicaaExperience .
+
+:EPSFExperience
+    :jobTitle "Data Scientist" ;
+    :company :EPSF ;
+    :startDate "2023-02-13"^^xsd:date ;
+    :task "Développement d'un système national d'analyse et de contrôle des événements de sécurité ferroviaire"@fr ;
+    :task "Application du Traitement Automatique des Langues (TAL/NLP) aux notifications des événements de sécurité ferroviaire."@fr ;
+    :task "Développement d'un dashboard de suivi de la sécurité"@fr .
+
+:SysnavExperience
+    :jobTitle "Assistant Ingénieur Informatique"@fr ;
+    :company :Sysnav ;
+    :startDate "2021-08-01"^^xsd:date ;
+    :endDate "2022-02-01"^^xsd:date ;
+    :task "Recherche et Développement d’un serveur de tuiles personnalisables"@fr ;
+    :task "Preuve de concept utilisée pour les technologies de géolocalisation des piétons. Géolocalisation faite à partir de la technologie brevetée Sysnav fonctionnant avec une centrale magnéto-inertielle."@fr .
+
+:UTCExperience
+    :jobTitle "Ambassadeur"@fr ;
+    :company :UTC ;
+    :startDate "2020-09-01"^^xsd:date ;
+    :endDate "2021-08-01"^^xsd:date ;
+    :task "Présentation de l'UTC pendant les lives, salons étudiants, portes ouvertes"@fr ;
+    :task "Ambassadeur Parcoursup de l'UTC"@fr .
+
+
+:WalacomExperience
+    :jobTitle "Développeur"@fr ;
+    :company :Walacom ;
+    :startDate "2020-06-01"^^xsd:date ;
+    :endDate "2020-08-01"^^xsd:date ;
+    :task "Développement d'un outill de prospection"@fr .
+
+:NausicaaExperience
+    :jobTitle "Stage technicien"@fr ;
+    :company :Nausicaa ;
+    :startDate "2019-07-01"^^xsd:date ;
+    :endDate "2019-08-01"^^xsd:date ;
+    :task "Maintenance audiovisuel de la partie Musée de Nausicaà (12V et 220V)"@fr ;
+    :task "Installation de nouvelles expositions"@fr .
+

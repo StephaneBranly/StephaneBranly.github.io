@@ -1,0 +1,30 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix : <https://stephanebranly.github.io#> .
+
+:EPSF
+    rdfs:label "Établissement Public de Sécurité Ferroviaire" ;
+    :website "https://securite-ferroviaire.fr/" .
+
+:Sysnav
+    rdfs:label "Sysnav" ;
+    :website "https://www.sysnav.fr/" .
+
+:UTC
+    rdfs:label "Université de Technologie de Compiègne" ;
+    :website "https://www.utc.fr/" .
+
+:Walacom
+    rdfs:label "Walacom" .
+
+:Nausicaa
+    rdfs:label "Nausicáa" ;
+    :website "https://www.nausicaa.fr" .
+
+:PolytechniqueMontreal
+    rdfs:label "Polytechnique Montréal" ;
+    :website "https://www.polymtl.ca/" .
+
+:LyceeBranly
+    rdfs:label "Lycée Branly" ;
+    :website "https://lpo-lyc-metier-edouard-branly-boulogne-sur-mer.62.ac-lille.fr/" .

@@ -5,14 +5,28 @@ import {
   AiOutlineLinkedin,
   AiOutlineGithub,
 } from "react-icons/ai";
+import getTriple from "utils/getTriple";
+import getNamedNode from "utils/getNamedNode";
+import { useOntoContext } from "ontology/OntoContext";
+import { useEffect } from "react";
 
 export interface DetailsProps {}
 
 const Details = (props: DetailsProps) => {
-  const birthday = new Date("2000-01-27");
+  const onto = useOntoContext();
+
+  useEffect(() => {
+    onto.addOntologyFile("./ontology/details.ttl");
+  }, []);
+
+  const birthDateValue = getTriple(
+    onto.store,
+    null,
+    getNamedNode("birthDate")
+  )?.value;
+  const birthday = birthDateValue ? new Date(birthDateValue) : new Date();
   const today = new Date();
   const age = today.getFullYear() - birthday.getFullYear();
-
   return (
     <section className="resume_section" id="details">
       <h2>Détails</h2>
@@ -20,14 +34,16 @@ const Details = (props: DetailsProps) => {
         <ul>
           <li>
             <a
-              href="mailto:stephanebranly.pro+webresume@gmail.com"
+              href={`mailto:${
+                getTriple(onto.store, null, getNamedNode("email"))?.value
+              }`}
               target={"_blank"}
               rel={"noreferrer"}
             >
               <div className="detail_content">
                 <AiOutlineMail className="detail_icon" />
                 <span className="detail_text">
-                  stephanebranly.pro@gmail.com
+                  {getTriple(onto.store, null, getNamedNode("email"))?.value}
                 </span>
               </div>
             </a>
@@ -40,7 +56,9 @@ const Details = (props: DetailsProps) => {
           </li>
           <li>
             <a
-              href="https://www.linkedin.com/in/stephanebranly/"
+              href={
+                getTriple(onto.store, null, getNamedNode("linkedin"))?.value
+              }
               target={"_blank"}
               rel={"noreferrer"}
             >
@@ -52,7 +70,7 @@ const Details = (props: DetailsProps) => {
           </li>
           <li>
             <a
-              href="https://github.com/StephaneBranly"
+              href={getTriple(onto.store, null, getNamedNode("github"))?.value}
               target={"_blank"}
               rel={"noreferrer"}
             >

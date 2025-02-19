@@ -1,22 +1,24 @@
-import React from 'react';
-import './App.scss';
-import { ComputerSkills, Education, Experience, Header, IAandDataScienceSkills, Languages, Details, Hobbies, Projects } from 'components'
+import React, { useRef, useState } from "react";
+import "./App.scss";
+
+import OntoProvider from "ontology/OntoProvider";
+import Navigation from "components/Navigation/Navigation";
+import { Route, Routes } from "react-router";
+import HumanView from "views/HumanView";
+import TurtleView from "views/TurtleView";
+import OntologyExplorerView from "views/OntologyExplorerView";
 
 function App() {
   return (
     <div className="App">
-
-      <section id='content'>
-        <Header />
-        <Details />
-        <Experience />
-        <Education />
-        <IAandDataScienceSkills />
-        <ComputerSkills />
-        <Projects />
-        <Languages />
-        <Hobbies />
-      </section>
+      <OntoProvider>
+        <Navigation />
+        <Routes>
+          <Route path="/" element={<HumanView />} />
+          <Route path="/turtle" element={<TurtleView />} />
+          <Route path="/explorer" element={<OntologyExplorerView />} />
+        </Routes>
+      </OntoProvider>
     </div>
   );
 }

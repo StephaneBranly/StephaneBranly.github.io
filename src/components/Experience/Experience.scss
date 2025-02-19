@@ -36,20 +36,6 @@
         font-style: italic;
       }
     }
-    a {
-      text-decoration: color(from $secondary-color);
-      font-weight: 600;
-      font-size: 1rem;
-    }
-    .experience_company {
-      font-size: 1rem;
-      font-weight: 600;
-      color: $secondary-color;
-      text-decoration: none;
-      &:hover {
-        color: $base-color;
-      }
-    }
     .experience_item_description {
       font-size: 1rem;
       font-weight: 400;
